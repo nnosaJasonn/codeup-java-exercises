@@ -42,21 +42,28 @@ public class ControlFlowExercises {
        }
 
         Scanner sc = new Scanner(System.in);
+        System.out.println("Do you want to continue?");
+        String answer = sc.nextLine();
         System.out.println("what number would you like to go to?");
         int stop = sc.nextInt();
 
+
             String numTable = "number  | squared| cubed \n------- | ------ | ------";
-            System.out.println("here is your table! \n");
-            System.out.printf(numTable + "%n");
-            for (int i = 1; i <= stop; i++) {
-                double square = Math.pow(i, 2);
-                double cube = Math.pow(i, 3);
-                if (i<10){
-                System.out.printf("%d\t\t|%.0f\t\t |%.0f%n", i, square, cube);
-                } else {
-                    System.out.printf("%d\t\t|%.0f\t |%.0f%n", i, square, cube);
+            if (answer.equalsIgnoreCase("yes")) {
+                System.out.println("here is your table! \n");
+                System.out.printf(numTable + "%n");
+
+                for (int i = 1; i <= stop; i++) {
+                    double square = Math.pow(i, 2);
+                    double cube = Math.pow(i, 3);
+                    if (i < 10) {
+                        System.out.printf("%d\t\t|%.0f\t\t |%.0f%n", i, square, cube);
+                    } else {
+                        System.out.printf("%d\t\t|%.0f\t |%.0f%n", i, square, cube);
+                    }
                 }
             }
+
             boolean moreGrades = true;
 
         do {
@@ -64,7 +71,7 @@ public class ControlFlowExercises {
             int grade = sc.nextInt();
             if (grade < 60) {
                 System.out.printf("Your grade is %d, you got an F%n", grade);
-            } else if ((grade >= 90) && (grade < 100)) {
+            } else if (grade >= 90) {
                 System.out.printf("Your grade is %d, you got an A%n", grade);
             } else if ((grade >= 80) && (grade < 90)) {
                 System.out.printf("Your grade is %d, you got a B%n", grade);
