@@ -13,7 +13,7 @@ public class Bob {
             System.out.println("This is bob, he likes talking");
         }
 
-        String converse = sc.next();
+        String converse;
         sc.useDelimiter("\n");
      do {
          converse = sc.next();
