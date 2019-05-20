@@ -54,7 +54,7 @@ public class Input {
     /*get int with prompt*/
     public  int getInt(String prompt){
         System.out.println(prompt);
-        int num = sc.nextInt();
+        int num = Integer.parseInt(sc.nextLine());
         return num;
     }
 /*get int with no prompt*/
