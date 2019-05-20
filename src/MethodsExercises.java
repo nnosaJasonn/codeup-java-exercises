@@ -15,7 +15,7 @@ public class MethodsExercises {
         /*Range*/
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number from 1-10");
-        integerRange(1, 10);
+        getInteger(1, 10);
 
         /*factorial*/
 
@@ -24,7 +24,7 @@ public class MethodsExercises {
         if (seeFacs.equalsIgnoreCase("yes")) {
             do {
                 System.out.println("Enter a number between 1 and 20");
-                System.out.println("you're factorial is: " + factorial(integerRange(1, 20)) + "\n");
+                System.out.println("you're factorial is: " + factorial(getInteger(1, 20)) + "\n");
                 System.out.println("would you like to see another factorial?");
                 seeFacs = sc.next();
             } while (seeFacs.equalsIgnoreCase("yes"));
@@ -53,27 +53,27 @@ public class MethodsExercises {
 
 
     }
-    public static int add(int x, int y){
+    private static int add(int x, int y){
         int added = x + y;
         return added;
     }
-    public static int subtract(int x, int y){
+    private static int subtract(int x, int y){
         int subtracted = x - y;
         return subtracted;
     }
-    public static int multiply(int x, int y){
+    private static int multiply(int x, int y){
         int multiplied = x * y;
         return multiplied;
     }
-    public static int divide(int x, int y){
+    private static int divide(int x, int y){
         int divided = x / y;
         return divided;
     }
-    public static int mod (int x, int y){
+    private static int mod (int x, int y){
         int modResult = x % y;
         return modResult;
     }
-    public static int timesNoTimes (int x, int y){
+    private static int timesNoTimes (int x, int y){
       int total = 0;
         while (y > 0){
             total += x;
@@ -81,26 +81,27 @@ public class MethodsExercises {
         }
         return total;
     }
-    public static int timesimesmess(int x, int y){
+    private static int timesimesmess(int x, int y){
         if (y == 0){
             return 0;
         }
         return x + timesimesmess(x, y-1);
     }
 
-    public static long factorial (int x){
+    private static long factorial (int x){
         if (x == 0){
             return 1;
         }
+
         return x * factorial (x-1);
     }
 
-    public static void dice (int x){
+    private static void dice (int x){
         double diceOne = Math.floor(Math.random() * x + 1);
         double diceTwo = Math.floor(Math.random() * x + 1);
         System.out.printf("you rolled two %d sided dice, the first one rolled a %.0f, the second one rolled a %.0f %n", x, diceOne, diceTwo);
     }
-    public static int integerRange (int x, int y){
+    private static int getInteger (int x, int y){
         Scanner sc = new Scanner(System.in);
         int numInput = sc.nextInt();
         while(numInput < x || numInput > y){
