@@ -9,12 +9,12 @@ public class Movie {
         this.category = category;
     }
 
-    public void setName (String name){
-        this.name = name;
-    }
-    public void setCategory(String category){
-        this.category = category;
-    }
+//    public void setName (String name){
+//        this.name = name;
+//    }
+//    public void setCategory(String category){
+//        this.category = category;
+//    }
 
     public String getName(){
         return name;

@@ -42,7 +42,8 @@ public class MoviesApplication {
                 addMovie();
                 break;
             default:
-                choice = input.getInt(choice + " is not valid\n\nWhat would you like to do? \n 0 - exit \n 1 - view all movies \n 2 - view movies in the animated category \n 3 - view movies in the horror category \n 4 - view movies in the horror category \n 5 - view movies in the scifi category \n 6 - view movies in the musical category \n 7 - add a movie \nEnter your choice:");
+                choice = input.getInt(choice + " is not a valid entry" +
+                        "\n\nWhat would you like to do? \n 0 - exit \n 1 - view all movies \n 2 - view movies in the animated category \n 3 - view movies in the horror category \n 4 - view movies in the horror category \n 5 - view movies in the scifi category \n 6 - view movies in the musical category \n 7 - add a movie \nEnter your choice:");
                 choose(choice);
 
         }
