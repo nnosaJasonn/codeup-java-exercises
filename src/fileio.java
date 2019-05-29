@@ -30,7 +30,7 @@ public class fileio {
         e.printStackTrace();
     }
 
-        List<String> groceries = Arrays.asList("coffee", "tea", "heroin");
+        List<String> groceries = Arrays.asList("coffee", "tea", "cheese");
         Path filepath = Paths.get(directory, filename);
         Files.write(filepath, groceries);
 
@@ -48,7 +48,7 @@ public class fileio {
 
         for(String line: lines){
             if(line.equals("eggs")){
-                newList.add("meth");
+                newList.add("milk");
                 continue;
             }
             newList.add(line);
