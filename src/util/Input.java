@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Input {
     private Scanner sc = new Scanner(System.in);
 /*String with prompt*/
-    public  String getString(String prompt){
+    public String getString(String prompt){
         System.out.println(prompt);
         return sc.nextLine();
     }
@@ -52,10 +52,15 @@ public class Input {
     }
 
     /*get int with prompt*/
-    public  int getInt(String prompt){
-        System.out.println(prompt);
-        int num = Integer.parseInt(sc.nextLine());
-        return num;
+    public int getInt(String prompt){
+       int number;
+       try {
+          number= Integer.valueOf(getString(prompt));
+       } catch(NumberFormatException e) {
+           System.out.println("That is not a number, please enter a whole number");
+          return getInt(prompt);
+       }
+       return number;
     }
 /*get int with no prompt*/
     public  int getInt(){
@@ -66,24 +71,23 @@ public class Input {
     /*getDouble min max with prompt*/
     public  double getDouble(double min, double max,String prompt) {
         System.out.println(prompt);
-        double num = sc.nextDouble();
-        if (num < min || num > max) {
+        try {
+            double num= Double.valueOf(getString(prompt));
+            if (num < min || num > max) {
+                return getDouble(min, max, prompt);
+            } else {
+                return num;
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("invalid input");
             return getDouble(min, max, prompt);
-        } else {
-            return num;
         }
     }
 
 
     /*getDouble min max without prompt*/
     public  double getDouble(double min, double max) {
-        System.out.printf("Enter a double between %.0f and %.0f. %n", min, max);
-        double num = sc.nextDouble();
-        if (num < min || num > max) {
-             return getDouble(min, max);
-        } else {
-            return num;
-        }
+        return getDouble(min, max, "please enter a double");
     }
 
     /*get double without prompt*/
@@ -93,9 +97,15 @@ public class Input {
 
     /*get double with prompt*/
     public  double getDouble(String prompt){
-        System.out.println(prompt);
-        double num = sc.nextDouble();
-        return num;
+        double number;
+        try {
+            number= Double.valueOf(getString(prompt));
+        } catch (NumberFormatException e) {
+            System.out.println("That is not a number, please enter a number");
+            return getDouble(prompt);
+        }
+        return number;
     }
+
 
 }
